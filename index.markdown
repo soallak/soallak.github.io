@@ -6,4 +6,6 @@ layout: home
 title: home
 ---
 
-# TODO
+# Projects
+
+[OpenVSLAM with KRS](projects/krs_openvslam/index)

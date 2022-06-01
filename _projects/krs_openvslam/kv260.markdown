@@ -1,10 +1,14 @@
 ---
 title: KV260
 layout: default
-parent: OpenVSLAM with KRS
+parent: Setup
+grand_parent: OpenVSLAM with KRS
 has_toc: true
+nav_order: 2
 ---
 
+# KV260 Acceleration Firmware
+{: .no_toc}
 <details open markdown="block">
   <summary>
     Table of contents
@@ -15,7 +19,54 @@ has_toc: true
 </details>
 
 
+The firmware artifacts are hosted in [acceleration_firmware_kv260](https://github.com/soallak/acceleration_firmware_kv260). 
 
-# TODO
-## TODO 
+This firmware repository is an adaptation of KRS's own [acceleration_firmware_kv260](https://github.com/ros-acceleration/acceleration_firmware_kv260). It targets an Ubuntu 20.04 and fixes several other things. The platform name remains the same: `kv260_custom_platform`
 
+**Note:** When using the OpenVSLAM workspace, this repository will be pulled by *vcs* under `src/kria/acceleration_firmware_kv260_soallak`
+
+## Install Board Parts
+
+The board parts used definitions used are not part of Vivado 2021.2. They need to be installed separately.
+
+```bash
+git clone https://github.com/Xilinx/XilinxBoardStore.git -b 2021.1
+cd XilinxBoardStore
+cp -r boards/Xilinx/k26c/1.1 <Xilinx-Install-Path>/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/k26c/ 
+cp -r boards/Xilinx/som240 <Xilinx-Install-Path>/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/
+```
+
+## Install Toolchain
+
+In order to use this acceleration firmware with `colcon acceleration`. The toolchain components namely the cross-compiler and the sysroot(rootfs) needs to be installed. To do this, execute the following:
+
+```bash
+sudo tar -C /opt/ -x -f toolchain/aarch64-linux-gnu-kv260-ubuntu-20.04.tar.gz
+sudo tar -C /opt/ -x -f toolchain/kv260-ubuntu-20.04.tar.gz
+```
+ 
+**Note**: The extraction location must be `/opt`
+
+## Create Initial SD
+
+The SD-Card to be inserted in KV260 Board must have two partitions:
+1. Boot Partition: Fat32 
+2. Rootfs Partition: Ext4
+
+There are several tools that can do this, for example *gparted*:
+
+![gparted](/assets/images/gparted.png)
+
+Once the SD-Card is formatted correctly. The boot artifacts and rootfs are copied onto the corresponding partitions:
+
+1. Mount the partitions
+2. Copy boot artifacts
+  ```bash
+  cp firmware/Image firmware/boot.scr firmware/uEnv.txt firmware/system.dtb <bootpart-mount-point>
+  ```
+3. Extract rootfs
+  ```bash
+  sudo tar -C <rootfs-mount-point> -x -f toolchain/kv260-ubuntu-20.04.tar.gz --strip-components=1 -v 
+  ```
+
+After these steps, the SD-Card can be inserted inside the board. The login credentials are `login: root` and `password: root`
