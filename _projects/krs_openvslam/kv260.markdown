@@ -70,3 +70,29 @@ Once the SD-Card is formatted correctly. The boot artifacts and rootfs are copie
   ```
 
 After these steps, the SD-Card can be inserted inside the board. The login credentials are `login: root` and `password: root`
+
+### SSH Config
+
+The default IP for the deployed rootfs is `192.168.3.20`. To ssh: 
+
+```bash
+ssh root@192.168.3.20 
+```
+
+Alternatively, to avoid password prompt:
+
+1. Generate a key:
+  ```bash
+  ssh-keygen -f ~/.ssh/kv260 
+  ```
+2. Adjust ssh config by appending the following to `~/.ssh/config`:
+  ```
+  Host kv260
+  User root
+  Hostname 192.168.3.20
+  IdentityFile ~/.ssh/kv260
+  ```
+3. Login:
+  ```bash
+  ssh kv260
+  ```
