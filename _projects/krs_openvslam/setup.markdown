@@ -62,7 +62,7 @@ git clone https://github.com/soallak/ros2_openvslam_acceleration.git
 
   ```bash 
   cd src
-  vcs import < src/.repos
+  vcs import < .repos
   ```
 
 - Install colcon KRS extensions:
