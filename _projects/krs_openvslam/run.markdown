@@ -17,18 +17,18 @@ After building the ROS2 OpenVSLAM Acceleration overlay:
 source $ROS2_HONE/setup.zsh 
 source install/setup.zsh
 
-ros2 launch slam_launch slam_full.launch.py dataset_path:=build/data_euroc/Machine_Hall_01/ dataset_period:=100 dataset_type:=<dataset-path>  system_type:=stereo start_pangolin_viewer:=true start_rviz2:=true
+ros2 launch slam_launch slam_full.launch.py dataset_path:=<dataset-path> dataset_period:=100 dataset_type:=euroc system_type:=stereo start_pangolin_viewer:=true start_rviz2:=true
 
 ```
 
-By default, the first sequence of the EuRoC MAV dataset will be downloaded. this can be found in `build/data_euroc/Machine_Hall_01/` relatively to the workspace.
+By default, the first sequence of the EuRoC MAV dataset will be downloaded and which can be found in `build/data_euroc/Machine_Hall_01/` relatively to the workspace.
 
 
 ## On Target
 
 ### Deployment
 
-The deployment consist of the copying the ROS2 overlay to the board. Which for KV260 target can be done using: 
+The deployment consists of the copying the ROS2 overlay to the board. Which, for KV260 target can be done using: 
 ```
 scp -r install-kv260-soallak kv260:
 ```
