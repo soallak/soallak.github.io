@@ -58,7 +58,7 @@ Finally, plug-in the USB drive and login using e.g. `ssh kv260`. The last steps,
 
 ### Partial Pipeline
 
-In this setup and only the accelerated stereo matching is computed on the target board. Everything else is runs on the Host PC.
+In this setup, only the accelerated stereo matching is computed on the target board. Everything else is runs on the Host PC.
 
 On host:
 
@@ -77,3 +77,21 @@ ros2 launch slam_launch slam_edge.launch.py stereo_algorithm:=2
 ```
 
 ### Full Pipeline
+
+In this setup, image acquisition, rectification and accelerated stereo matching is done on the target KV260 board, while the Host PC does the poses estimation and visualization.
+
+On Host:
+
+```bash
+source $ROS2_HONE/setup.zsh 
+source install/setup.zsh
+ros2 launch slam_launch slam_full_host.launch.py system_type:=stereo-depth start_rviz2:=true start_pangolin_viewer:=true
+```
+
+On Target: 
+
+```bash
+source /opt/ros/foxy/setup.bash
+source install-kv260-soallak/local_setup.bash 
+ros2 launch slam_launch slam_full_edge.launch.py stereo_algorithm:=2 dataset_path:=<dataset-path> dataset_period:=200 dataset_type:=euroc
+```
