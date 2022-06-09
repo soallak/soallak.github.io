@@ -21,7 +21,7 @@ nav_order: 2
 ## Xilinx Tools
 
 Xilinx Vitis is needed to build acceleration kernels.
-The release version `2021.2` has been used. After installing Vitis 2021.2, there is a need to apply Y2K22 patch solve an overflow issue. Refer to Xilinx [documentation](https://support.xilinx.com/s/article/76960?language=en_US) for that. 
+The release version `2021.2` has been used. After installing Vitis 2021.2, there is a need to apply Y2K22 patch to solve an overflow issue. Refer to Xilinx [documentation](https://support.xilinx.com/s/article/76960?language=en_US) for that. 
 
 
 
@@ -31,7 +31,7 @@ The release version `2021.2` has been used. After installing Vitis 2021.2, there
 
 **Note:** Another distribution could be used
 
-[ros-perception/vision_opencv](https://github.com/ros-perception/vision_opencv/tree/ros2) is a needed dependency. If ROS2 is to be installed using binary packages, through the OS package manager, for example on Ubuntu, *ros-rolling-desktop* includes the components of *vision_opencv*. If ROS2 is build from sources, then one has to add *vision_opencv* to the repositories list before importing them using *vcstool*
+[ros-perception/vision_opencv](https://github.com/ros-perception/vision_opencv/tree/ros2) is a needed dependency. If ROS2 is to be installed using binary packages, through the OS package manager, for example on Ubuntu, *ros-rolling-desktop* includes the components of *vision_opencv*. If ROS2 is built from sources, then one has to add *vision_opencv* to the repositories list before importing them using *vcs*
 
 ## OpenVSLAM dependencies
 

@@ -19,6 +19,8 @@ nav_order: 4
 
 **Note:** For all build commands, the workspace overlay should not be sourced
 
+**Note:** zsh has been used. Change any `setup.zsh` occurence with `setup.$SHELL` wherever it is needed.
+
 ## Host Build
 
 This builds the ROS2 workspace. It always necessary as it also creates the `acceleration` directory that is needed for *Target Builds*.
