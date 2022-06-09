@@ -23,7 +23,7 @@ The firmware artifacts are hosted in [acceleration_firmware_kv260](https://githu
 
 This firmware repository is an adaptation of KRS's own [acceleration_firmware_kv260](https://github.com/ros-acceleration/acceleration_firmware_kv260). It targets an Ubuntu 20.04 and fixes several other things. The platform name remains the same: `kv260_custom_platform`
 
-**Note:** When using the OpenVSLAM workspace, this repository will be pulled by *vcs* under `src/kria/acceleration_firmware_kv260_soallak`
+**Note:** When using the OpenVSLAM workspace, this repository will be pulled by *vcs* under `src/kria/acceleration_firmware_kv260/acceleration_firmware_kv260_soallak`
 
 ## Install Board Parts
 

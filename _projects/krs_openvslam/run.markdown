@@ -14,7 +14,7 @@ In this particular case, there is no need to build nor deploy the ROS2 overlay f
 After building the ROS2 OpenVSLAM Acceleration overlay:
 
 ```bash
-source $ROS2_HONE/setup.zsh 
+source $ROS2_HOME/setup.zsh 
 source install/setup.zsh
 
 ros2 launch slam_launch slam_full.launch.py dataset_path:=<dataset-path> dataset_period:=100 dataset_type:=euroc system_type:=stereo start_pangolin_viewer:=true start_rviz2:=true
@@ -63,7 +63,7 @@ In this setup, only the accelerated stereo matching is computed on the target bo
 On host:
 
 ```bash
-source $ROS2_HONE/setup.zsh 
+source $ROS2_HOME/setup.zsh 
 source install/setup.zsh
 ros2 launch slam_launch slam_host.launch.py dataset_path:=build/data_euroc/Machine_Hall_01/ dataset_period:=500 dataset_type:=euroc start_rviz2:=true start_pangolin_viewer:=true
 ```
@@ -83,7 +83,7 @@ In this setup, image acquisition, rectification and accelerated stereo matching 
 On Host:
 
 ```bash
-source $ROS2_HONE/setup.zsh 
+source $ROS2_HOME/setup.zsh 
 source install/setup.zsh
 ros2 launch slam_launch slam_full_host.launch.py system_type:=stereo-depth start_rviz2:=true start_pangolin_viewer:=true
 ```
