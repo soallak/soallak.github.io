@@ -48,6 +48,10 @@ FBoW needs to be installed from source. As for the other dependencies, using the
 
 More details are available [here](https://stella-cv.readthedocs.io/en/latest/installation.html)
 
+## Additional Dependencies
+
+- [lttng](https://lttng.org/download/) UST and Tools : version 12.3 or later
+
 ## Workspace
 
 We provide a [ROS workspace meta repository](https://github.com/soallak/ros2_openvslam_acceleration). 

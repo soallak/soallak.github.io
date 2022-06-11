@@ -19,7 +19,7 @@ nav_order: 4
 
 **Note:** For all build commands, the workspace overlay should not be sourced
 
-**Note:** zsh has been used. Change any `setup.zsh` occurence with `setup.$SHELL` wherever it is needed.
+**Note:** zsh has been used. Change any `setup.zsh` occurrence with `setup.$SHELL` wherever it is needed.
 
 ## Host Build
 
