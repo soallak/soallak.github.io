@@ -27,7 +27,7 @@ This builds the ROS2 workspace. It always necessary as it also creates the `acce
 
 
 ```bash
-source $ROS2_HONE/setup.zsh 
+source $ROS2_HOME/setup.zsh 
 colcon build --merge-install --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release --parallel-workers 32
 ```
 
@@ -38,7 +38,7 @@ This builds the workspace for the target board. The target board selection is do
 ### KV260
 
 ```bash
-source $ROS2_HONE/setup.zsh 
+source $ROS2_HOME/setup.zsh 
 colcon acceleration select kv260-soallak
 colcon build --build-base=build-kv260-soallak --install-base=install-kv260-soallak --merge-install --mixin kv260-soallak --cmake-args -DROS_VITIS=ON -DCMAKE_BUILD_TYPE=Release -DNO_IMAGE_PROC_KERNEL=ON
 ```
