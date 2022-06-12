@@ -31,7 +31,7 @@ The release version `2021.2` has been used. After installing Vitis 2021.2, there
 
 **Note:** Another distribution could be used
 
-[ros-perception/vision_opencv](https://github.com/ros-perception/vision_opencv/tree/ros2) is a needed dependency. If ROS2 is to be installed using binary packages, through the OS package manager, for example on Ubuntu, *ros-rolling-desktop* includes the components of *vision_opencv*. If ROS2 is built from sources, then one has to add *vision_opencv* to the repositories list before importing them using *vcs*
+[ros-perception/vision_opencv](https://github.com/ros-perception/vision_opencv/tree/ros2) and [ros-perception/image_common](https://github.com/ros-perception/image_common/tree/ros2) are needed. If ROS2 is built from sources, then one has to add *vision_opencv* and *image_common* to the repositories list before importing them using *vcs*
 
 ## OpenVSLAM dependencies
 
