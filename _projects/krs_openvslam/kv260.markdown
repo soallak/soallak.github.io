@@ -73,7 +73,7 @@ After these steps, the SD-Card can be inserted inside the board. The login crede
 
 ### SSH Config
 
-The default IP for the deployed rootfs is `192.168.3.20`. To ssh: 
+The default IP for the deployed rootfs is `192.168.3.20/24`. To ssh: 
 
 ```bash
 ssh root@192.168.3.20 

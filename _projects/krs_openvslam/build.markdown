@@ -25,11 +25,26 @@ nav_order: 4
 
 This builds the ROS2 workspace. It always necessary as it also creates the `acceleration` directory that is needed for *Target Builds*.
 
-
 ```bash
 source $ROS2_HOME/setup.zsh 
 colcon build --merge-install --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON -DCMAKE_BUILD_TYPE=Release --parallel-workers 32
 ```
+
+### Docker
+Alternatively, a Dockerfile is provided that automatize the Host Build. To build the docker image, do
+
+```
+make -C docker build
+```
+
+And to run the docker image:
+
+```
+make -C docker run
+```
+**Note:** Inside the container, the ros overlay can be found at `/openvslam_acceleration`
+
+**Note:** Inside the container, the default dataset can be found at `/data/euroc/Machine_Hall_01`
 
 ## Target Build
 

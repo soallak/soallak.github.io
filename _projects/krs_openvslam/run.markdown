@@ -7,6 +7,9 @@ nav_order: 5
 ---
 
 # Run
+
+**Note:** All *ros2 launch* commands that are run on the Host PC can be run within a container of the provided docker image. See [here](/projects/krs_openvslam/build/#docker)
+
 ## Full Pipeline On Host
 
 In this particular case, there is no need to build nor deploy the ROS2 overlay for a particular edge target. 

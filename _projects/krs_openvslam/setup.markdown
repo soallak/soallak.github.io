@@ -51,6 +51,7 @@ More details are available [here](https://stella-cv.readthedocs.io/en/latest/ins
 ## Additional Dependencies
 
 - [lttng](https://lttng.org/download/) UST and Tools : version 12.3 or later
+- OpenCL development headers and libraries
 
 ## Workspace
 
