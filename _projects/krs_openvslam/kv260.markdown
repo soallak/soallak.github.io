@@ -38,12 +38,8 @@ cp -r boards/Xilinx/som240 <Xilinx-Install-Path>/Vivado/2021.2/data/xhub/boards/
 
 ## Install Toolchain
 
-In order to use this acceleration firmware with `colcon acceleration`. The toolchain components namely the cross-compiler and the sysroot(rootfs) needs to be installed. To do this, execute the following:
+In order to use this acceleration firmware with `colcon acceleration`. The toolchain components namely the cross-compiler and the sysroot(rootfs) needs to be installed. To do this, refer to [Install Toolchain](https://github.com/soallak/acceleration_firmware_kv260#install-toolchain):
 
-```bash
-sudo tar -C /opt/ -x -f toolchain/aarch64-linux-gnu-kv260-ubuntu-20.04.tar.gz
-sudo tar -C /opt/ -x -f toolchain/kv260-ubuntu-20.04.tar.gz
-```
  
 **Note**: The extraction location must be `/opt`
 
