@@ -70,3 +70,8 @@ colcon build --build-base=build-kv260-soallak --install-base=install-kv260-soall
 ```
 
 Sometimes, there is no need to re-trigger Vitis. This is not detected automatically, that is why `-DNOKERNELS=ON` was introduced to reduce drastically the compilation time when *FPGA* related code has not been changed. 
+
+## Enable Tracing
+
+To enable tracing add `-DTRACETOOLS_LTTNG_ENABLED=ON` to `--cmake-args`.
+
