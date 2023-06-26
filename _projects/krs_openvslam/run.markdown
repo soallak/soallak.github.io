@@ -98,3 +98,29 @@ source /opt/ros/foxy/setup.bash
 source install-kv260-soallak/local_setup.bash 
 ros2 launch slam_launch slam_full_edge.launch.py stereo_algorithm:=2 dataset_path:=<dataset-path> dataset_period:=200 dataset_type:=euroc
 ```
+
+## Tracing
+
+The pipeline is instrumented using LTTng. Following are the steps to obtain the traces. 
+
+### Before launching the pipeline
+
+```bash
+lttng create <session-name>
+lttng enable-event --userspace slam_tracepoint_provider:'*' 
+lttng start
+```
+
+### After pipeline has finished
+
+```bash
+lttng stop
+```
+
+### Analyzing the traces
+
+By default, LTTng will store the traces under `~/lttng-traces/<session-name>-<date>`. A script is provided to analyze LTTng traces, to use it:
+
+```bash
+ros2 run slam_tracepoint_analysis process <lttng-traces-path> <outputfile_1>.png <outputfile_2>.png
+```
